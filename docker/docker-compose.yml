@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sentiverse:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: sentiverse_app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always

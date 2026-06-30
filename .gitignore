@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Unit test / coverage reports
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+venv.ps1
+venv.bat
+
+# IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Databases (recreated dynamically on launch)
+data/sentiverse.db
+data/*.db-journal
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store

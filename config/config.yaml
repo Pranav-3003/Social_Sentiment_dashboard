@@ -1,0 +1,71 @@
+app:
+  name: "SentiVerse AI"
+  version: "1.0.0"
+  db_path: "sqlite:///data/sentiverse.db"
+
+data_collection:
+  reddit:
+    client_id: ""
+    client_secret: ""
+    user_agent: "SentiVerseAI:v1.0.0"
+  youtube:
+    api_key: ""
+  x:
+    bearer_token: ""
+
+preprocessing:
+  default_language: "en"
+  remove_urls: true
+  remove_emojis: false
+  remove_html: true
+  remove_mentions: true
+  process_hashtags: "extract" # Options: extract, remove, keep
+  expand_contractions: true
+  remove_punctuation: true
+  remove_numbers: false
+  lowercase: true
+  unicode_normalization: true
+  whitespace_cleanup: true
+
+models:
+  classical:
+    cv_splits: 3
+    random_state: 42
+    logistic_regression:
+      C: 1.0
+      max_iter: 1000
+    naive_bayes:
+      alpha: 1.0
+    random_forest:
+      n_estimators: 100
+      max_depth: 10
+    svm:
+      C: 1.0
+    xgboost:
+      n_estimators: 100
+      max_depth: 6
+      learning_rate: 0.1
+    lightgbm:
+      n_estimators: 100
+      learning_rate: 0.1
+    catboost:
+      iterations: 100
+      learning_rate: 0.1
+  deep_learning:
+    epochs: 5
+    batch_size: 32
+    embedding_dim: 100
+    lstm_units: 64
+  transformers:
+    model_name: "distilbert-base-uncased"
+    epochs: 3
+    batch_size: 16
+    learning_rate: 2e-5
+
+explainability:
+  lime_num_features: 10
+  shap_nsamples: 100
+
+topic_modeling:
+  num_topics: 5
+  random_state: 42
